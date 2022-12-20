@@ -11,4 +11,11 @@ end
 # the line below adds the JSONBodyParser middleware made available by the rack-contrib gem. This allows Sinatra (which is built on Rack) to parse the body of incoming requests in JSON format. (The body in JSON format will be parsed and included in a hash called `params` that we can access within our controller)
 use Rack::JSONBodyParser
 
-run ApplicationController
+
+# this is where we mount our controllers 
+# letting rack know the controller exists 
+
+# utilize a combo of keywords: 'run' and 'use'
+
+run ApplicationController # only going to run one time, and this is going to be the main controller that establishes connection with sinatra 
+use DonationsControllers
